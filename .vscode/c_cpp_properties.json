@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "configs",
+            "includePath": [
+                "${workspaceFolder}/windows/includes/**",
+                "${workspaceFolder}/engine/src/**"
+            ],
+            "defines": ["_DEBUG", "FUSE_EXPORT"],
+            "cStandard": "c17",
+            "cppStandard": "c++17", //This is just here to improve code completion
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}
+//This file is just to configure the VS Code C/C++ language extension to give me a little extra hand with
+//intellisense, error checking, syntax highlighting etc.

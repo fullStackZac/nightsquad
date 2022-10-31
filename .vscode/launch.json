@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Windows",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/build/bin/Debug",
+            "program": "${workspaceFolder}/build/bin/Debug/game.exe"
+        },
+        {
+            "name": "Linux",
+            "type": "cppdbg",
+            "request": "launch",
+            //after research I believe the blow line can use "externalConsole": "true" but that will open a terminal outside VS Code..not really what I want...
+            "internalConsoleOptions": "openOnSessionStart", //may need to remove this.... using "console" here not allowed...researching...
+            "miDebuggerPath": "/usr/bin/gdb",
+            "cwd": "${workspaceFolder}/build/bin",
+            "program":"${workspaceFolder}/build/bin/game"
+        }
+    ]
+}
+
+//configuring the debugger in VS code.  Trying to make sure the program will work on both windows and linux (don't have an apple to configure)
+//Sorry about that if you are an Apple user!  I plan on fixing that in the future.  

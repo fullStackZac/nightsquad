@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build everything",
+            "windows": {"command": "${workspaceFolder}/build-win.bat"},
+            "linux": {"command": "${workspaceFolder}/build-linux.sh"},
+            "problemMatcher": [ "$gcc"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "group": { "kind": "build", "isDefault": true },
+        },
+    ],
+    "version": "2.0.0"
+}
+
+//configuring stuff like VS Code build tasks, clean tasks etc. here.  Since I have a specific
+//way this thing is going to be compiled, I am giving it a shell script that will be executed
+//when I want the project compiled
