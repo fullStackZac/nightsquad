@@ -11,13 +11,22 @@ add_definitions(-D_DEBUG)
 
 #windows platform
 if(WIN32)
+target_link_libraries(${PROJECT_NAME} SDL2 SDL2main SDL2_image SDL2_ttf SDL2_mixer)
   target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/windows/includes)
   target_link_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/windows/libs)
 endif(WIN32)
 
 #linux platform
 if(UNIX)
-  #TODO: Find the crap I need for this part
+  find_package(SDL2 REQUIRED)
+  find_package(SDL2_ttf REQUIRED)
+  find_package(SDL2_mixer REQUIRED)
+  find_package(SDL2_image REQUIRED)
+  #include headers
+  target_include_directories(${PROJECT_NAME} PUBLIC ${SDL2_INCLUDE_DIRS})
+  #link libraries
+  target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
+  target_link_libraries(${PROJECT_NAME} ${SDL2_TTF_LIBRARIES} ${SDL2_MIXER_LIBRARIES})
 endif(UNIX)
 
 #precompile headers
